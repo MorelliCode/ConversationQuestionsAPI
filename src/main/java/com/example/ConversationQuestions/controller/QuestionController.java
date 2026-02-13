@@ -24,7 +24,7 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping({"/{id}", "/{id}/"})
     public ResponseEntity<ConversationQuestion> getById(@PathVariable String id) {
         ConversationQuestion question = questionService.getQuestionById(id);
 
