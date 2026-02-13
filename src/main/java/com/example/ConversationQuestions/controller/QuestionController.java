@@ -22,7 +22,7 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-    @GetMapping
+    @GetMapping("/random")
     public ConversationQuestion getRandom() {
         return questionService.getRandomQuestion();
     }
