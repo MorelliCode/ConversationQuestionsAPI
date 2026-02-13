@@ -40,6 +40,13 @@ public class QuestionService {
         return this.questions;
     }
 
+    public ConversationQuestion getQuestionById(String id) {
+        return this.questions.stream()
+                .filter(question -> question.id().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
     public ConversationQuestion getRandomQuestion() {
         if (questions.isEmpty()) {
             return null;
