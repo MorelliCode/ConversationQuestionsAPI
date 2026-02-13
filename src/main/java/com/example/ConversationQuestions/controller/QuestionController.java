@@ -45,7 +45,7 @@ public class QuestionController {
         return questionService.getQuestionsByGrammar(searchString);
     }
 
-    @GetMapping("/random")
+    @GetMapping({"/random", "/random/"})
     public ConversationQuestion getRandom() {
         return questionService.getRandomQuestion();
     }
