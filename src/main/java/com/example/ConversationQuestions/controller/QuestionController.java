@@ -40,6 +40,11 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
+    @GetMapping({"/search/grammar/{searchString}", "/search/grammar/{searchString}/"})
+    public List<ConversationQuestion> getByGrammar(@PathVariable String searchString) {
+        return questionService.getQuestionsByGrammar(searchString);
+    }
+
     @GetMapping("/random")
     public ConversationQuestion getRandom() {
         return questionService.getRandomQuestion();

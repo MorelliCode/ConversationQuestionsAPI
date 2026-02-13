@@ -53,6 +53,13 @@ public class QuestionService {
                 .toList();
     }
 
+    public List<ConversationQuestion> getQuestionsByGrammar(String searchString) {
+        return this.questions.stream()
+                .filter(question -> question.grammar() != null)
+                .filter(question -> question.grammar().toLowerCase().contains(searchString.toLowerCase()))
+                .toList();
+    }
+
     public ConversationQuestion getRandomQuestion() {
         if (questions.isEmpty()) {
             return null;
