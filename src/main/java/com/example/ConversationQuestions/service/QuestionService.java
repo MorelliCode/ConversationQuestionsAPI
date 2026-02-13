@@ -47,6 +47,12 @@ public class QuestionService {
                 .orElse(null);
     }
 
+    public List<ConversationQuestion> getQuestionsByCategory(String category) {
+        return this.questions.stream()
+                .filter(question -> question.category().equalsIgnoreCase(category))
+                .toList();
+    }
+
     public ConversationQuestion getRandomQuestion() {
         if (questions.isEmpty()) {
             return null;

@@ -35,6 +35,11 @@ public class QuestionController {
         return ResponseEntity.ok(question);
     }
 
+    @GetMapping({"/category/{category}", "/category/{category}/"})
+    public List<ConversationQuestion> getByCategory(@PathVariable String category) {
+        return questionService.getQuestionsByCategory(category);
+    }
+
     @GetMapping("/random")
     public ConversationQuestion getRandom() {
         return questionService.getRandomQuestion();
